@@ -1,0 +1,134 @@
+total_patients =
+DISTINCTCOUNT(medication_adherence[Patient_ID])
+
+Average_PDC =
+AVERAGE(medication_adherence[PDC])
+
+Average_MPR =
+AVERAGE(medication_adherence[MPA])
+
+Adherence_Rate(%) =
+DIVIDE(
+	CALCULATE(
+		COUNTROWS(medication_adherence),
+
+medication_adherence[Adherence_Status] = "Adherent"
+	),
+	COUNTROWS(medication_adherence)
+)
+
+Average_Refil_Gap =
+AVERAGE(medication_adherence[Refil_Gap_Days])
+
+Hospitalization_Rate =
+DIVIDE(
+	CALCULATE(
+		COUNTROWS(medication_adherence),
+		medication_adherence[Hospitalized] = "Yes"
+	),
+	COUNTROWS(medication_adherence)
+)
+
+Hospitalization_Rate (Non-Adherent) =
+DIVIDE(
+	CALCULATE(
+		COUNTROWS(medication_adherence),
+		medication_adherence[Hopitalized] = "Yes",
+
+medication_adherence[Adherence_Status] = "Non-Adherent"
+	),
+	CALCULATE(
+		COUNTROWS(medication_adherence),
+
+medication_adherence[Adherence_Status] = "Non-Aherent"
+	)
+)
+
+Age Group =
+SWITCH(
+	TRUE(),
+	medication_adherence[Age] >= 18 &&
+	medication_adherence[Age] <= 29, "18-29",
+	medication_adherence[Age] >= 30 &&
+	medication_adherence[Age] <= 44, "30-44",
+	medication_adherence[Age] >= 45 &&
+	medication_adherence[Age] <= 59, "45=59",
+	medication_adherence[Age] >= 60 &&
+	medication_adherence[Age] <= 74, "60-74",
+	medication_adherence[Age] >= 75, "75+",
+	"Unknown"
+)
+
+Hospitalized Yes =
+CALCULATE(
+	COUNTROWS(medication_adherence),
+	medication_adherence[Hospitalized] = "Yes"
+)
+
+Hospitalized No =
+CALCULATE(
+	COUNTROWS(medication_adherence),
+	medication_adherence[Hospitalized] = "No"
+)
+
+Max PDC =
+MAX(medication_adherence[PDC])
+
+Min PDC =
+MIN(medication_adherence[PDC])
+
+Max MPR =
+MAX(medication_adherence[MPR])
+
+Min MPR =
+MIN(medication_adherence[MPR])
+
+Adherent =
+CALCULATE(
+	COUNTROWS(medication_adherence),
+	medication_adherence[Adherence_Status] = "Adherent"
+)
+
+Non-Adherent =
+CALCULATE(
+	COUNTROWS(medication_adherence),
+	medication_adherence[Adherence_Status] = "Non-Adherent"
+)
+
+Max =
+VAR MaxGap =
+MAX(medication_adherence[Refil_Gap_Days])
+RETURN
+	CALCULATE(
+		SELECTEDVALUE(medication_adherence[Medication]),
+		medication_adherence[Refil_Gap_Days] = MaxGap
+)
+
+Min =
+VAR MinGap =
+MIN(medication_adherence[Refil_Gap_Days])
+RETURN
+	CALCULATE(
+		SELECTEDVALUE(medication_adherence[Medication]),
+		medication_adherence[Refil_Gap_Days] = MinGap
+)
+
+Month_Lookup = 
+DATATABLE(
+    "Observation_Month", STRING,
+    "Month Number", INTEGER,
+    {
+        {"Jan", 1},
+        {"Feb", 2},
+        {"Mar", 3},
+        {"Apr", 4},
+        {"May", 5},
+        {"Jun", 6},
+        {"Jul", 7},
+        {"Aug", 8},
+        {"Sep", 9},
+        {"Oct", 10},
+        {"Nov", 11},
+        {"Dec", 12}
+    }
+) (created a new table for this)
