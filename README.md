@@ -23,7 +23,7 @@ Medication adherence performance remained consistently low across demographic se
 
 Diagnosis-level adherence performance demonstrated limited variation, with adherence rates ranging from 23.2% to 27.2% across conditions. This consistency suggests that adherence problems were driven more by systemic or behavioral factors rather than disease-specific treatment complexity, reinforcing the need for organization-wide adherence strategies rather than isolated clinical interventions.
 
-![](ad_rate_by_diagnosis.png)
+![](images/ad_rate_by_diagnosis.png)
 
 Medication-level analysis revealed relatively uniform medication coverage, with average PDC values clustered between 66% and 67% across major medications. Amlodipine and Omeprazole recorded the highest average PDC values at approximately 67%, while Lisinopril averaged around 66%, demonstrating that medication availability was relatively stable despite the low adherence classification rates observed in the population.
 
