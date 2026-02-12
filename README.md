@@ -31,7 +31,7 @@ Medication-level analysis revealed relatively uniform medication coverage, with 
 
 Refill behavior presented a significant operational concern, as average refill gaps ranged between 21.8 and 22.8 days across diagnoses. Chronic Kidney Disease patients recorded the longest average refill gap at approximately 23 days, followed by Heart Disease at 22.3 days, Hypertension at 21.9 days, and Diabetes at 21.8 days. The small variation across diagnoses indicates that refill delays were a systemic issue rather than being driven by a specific clinical condition.
 
-![](images/refil by diagnosis.png)
+![](images/refil_by_diagnosis.png)
 
 Hospitalization analysis highlighted adherence status as a strong utilization driver, as non-adherent patients experienced a hospitalization rate of approximately 17.6%, whereas adherent patients showed no recorded hospitalizations within this dataset. This clear separation emphasizes the potential clinical and operational value of adherence monitoring as an early risk indicator for acute care utilization.
 
