@@ -29,8 +29,3 @@ Monthly trend analysis demonstrated relatively stable adherence performance and 
 
 ## Recommendations
 Healthcare organizations should prioritize large-scale adherence improvement strategies because nearly 75% of patients fall into the non-adherent category, making population-wide interventions more impactful than disease-specific programs. Refill gap reduction programs should target the observed ~22-day average refill delay, using automated reminders, pharmacy outreach, and refill synchronization to improve medication continuity. Care coordination teams should integrate adherence status into hospitalization risk monitoring models because non-adherent patients demonstrated a 17.6% hospitalization rate, indicating a strong opportunity for early intervention. Medication monitoring programs should continue tracking adherence performance at the medication level even though average PDC values appear similar, as patient-level behavior differences remain substantial. Finally, ongoing monthly adherence monitoring should be embedded into operational dashboards to track performance improvements and evaluate the effectiveness of adherence intervention strategies over time.
-
-
-## 👤 Author
-Pantaleon Akujobi  
-Healthcare & Data Analytics Projects
